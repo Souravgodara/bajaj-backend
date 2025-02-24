@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const PORT = 3000;
+const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
@@ -46,6 +46,6 @@ app.get("/bfhl", (req, res) => {
     operation_code: 1,
   });
 });
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
